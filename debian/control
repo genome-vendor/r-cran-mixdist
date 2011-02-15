@@ -1,0 +1,24 @@
+Source: mixdist
+Section: gnu-r
+Priority: optional
+Maintainer: cran2deb autobuild <cran2deb@gmail.com>
+Build-Depends: r-base-dev, xvfb, xauth, xfonts-base, r-base-core,
+ debhelper (>> 4.1.0), cdbs
+Standards-Version: 3.9.1
+Homepage: http://www.r-project.org,
+ http://www.math.mcmaster.ca/peter/mix/mix.html
+
+Package: r-cran-mixdist
+Architecture: all
+Depends: r-base-core
+Description: GNU R package "Finite Mixture Distribution Models"
+ .
+ This package contains functions for fitting finite mixture distribution
+ models to grouped data and conditional data by the method of maximum
+ likelihood using a combination of a Newton-type algorithm and the EM
+ algorithm.
+ .
+ Author: Peter Macdonald <pdmmac@mcmaster.ca>, with contributions from
+ Juan Du <duduyy@hotmail.com>
+ .
+ Maintainer: Peter Macdonald <pdmmac@mcmaster.ca>
