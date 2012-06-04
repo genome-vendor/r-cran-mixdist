@@ -1,3 +1,9 @@
+mixdist (0.5-4-1cran1) testing; urgency=low
+
+  * Imported Upstream version 0.5-4
+
+ -- Nathaniel Nutter <nnutter@genome.wustl.edu>  Mon, 04 Jun 2012 12:19:06 -0500
+
 mixdist (0.5-3-1cran1) testing; urgency=low
 
   * cran2deb svn: 343 with DB version 1.
