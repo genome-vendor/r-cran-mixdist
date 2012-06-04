@@ -1,0 +1,21 @@
+From: Nathan Nutter <nnutter@genome.wustl.edu>
+Date: Mon, 4 Jun 2012 16:19:39 -0500
+Subject: add default namespace file
+
+---
+ NAMESPACE |    5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 NAMESPACE
+
+diff --git a/NAMESPACE b/NAMESPACE
+new file mode 100644
+index 0000000..2328f3c
+--- /dev/null
++++ b/NAMESPACE
+@@ -0,0 +1,5 @@
++# Default NAMESPACE created by R
++# Remove the previous line if you edit this file
++
++# Export all names
++exportPattern(".")
+-- 
