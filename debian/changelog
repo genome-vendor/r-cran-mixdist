@@ -1,3 +1,9 @@
+mixdist (0.5-4-2) testing; urgency=low
+
+  * add patch to create default namespace
+
+ -- Nathaniel Nutter <nnutter@genome.wustl.edu>  Mon, 04 Jun 2012 16:24:21 -0500
+
 mixdist (0.5-4-1cran1) testing; urgency=low
 
   * Imported Upstream version 0.5-4
