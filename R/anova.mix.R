@@ -1,8 +1,8 @@
-## last modified May 2008
+## last modified 2011-10-18
 
-anova.mix <- function(object, mixobj2, ...) 
+anova.mix <- function (object, mixobj2, ...) 
 {
-    mixobj1<-object
+    mixobj1 <- object
     mixanova <- NULL
     if (inherits(mixobj1, "mix")) {
         hypo <- FALSE
@@ -12,8 +12,8 @@ anova.mix <- function(object, mixobj2, ...)
                   0) {
                   if (sum(mixobj2$mixdata[, 2] != mixobj1$mixdata[, 
                     2]) == 0) {
-                    nan1 <- sum(is.nan(mixobj1$se))
-                    nan2 <- sum(is.nan(mixobj2$se))
+                    nan1 <- sum(sapply(mixobj1$se, is.nan))
+                    nan2 <- sum(sapply(mixobj2$se, is.nan))
                     if (nan1 != 0) {
                       warning(paste("There are ", nan1, "NaN values in se for model 1, ANOVA may be invalid"))
                       mixobj1$se <- apply(mixobj1$se, c(1, 2), 
@@ -55,17 +55,17 @@ anova.mix <- function(object, mixobj2, ...)
         }
         if (hypo) 
             mixanova <- data.frame(Df = c(ddf, mixobj$df), Chisq = c(dchisq, 
-                mixobj$chisq), "Pr(>Chisq)" = c(pchisq(dchisq, 
+                mixobj$chisq), `Pr(>Chisq)` = c(pchisq(dchisq, 
                 ddf, low = FALSE), mixobj$P), row.names = c("Hypothesis", 
                 "Residuals"), check.names = FALSE)
         else mixanova <- data.frame(Df = mixobj1$df, Chisq = mixobj1$chisq, 
-            "Pr(>Chisq)" = mixobj1$P, row.names = "Residuals", 
+            `Pr(>Chisq)` = mixobj1$P, row.names = "Residuals", 
             check.names = FALSE)
     }
     else if (!missing(mixobj2)) {
         if (inherits(mixobj2, "mix")) 
             mixanova <- data.frame(Df = mixobj2$df, Chisq = mixobj2$chisq, 
-                "Pr(>Chisq)" = mixobj2$P, row.names = "Residuals", 
+                `Pr(>Chisq)` = mixobj2$P, row.names = "Residuals", 
                 check.names = FALSE)
     }
     if (is.null(mixanova)) {

@@ -44,12 +44,12 @@ them do not, it returns \code{NULL}.
 \examples{
 data(pike65) # load the grouped data `pike65'
 data(pikepar) # load the initial values of parameters for the data `pike65'
-fitpike1 <- mix(pike65, pikepar, "lnorm", mixconstr(conmu = "MFX", 
+fitpike3 <- mix(pike65, pikepar, "lnorm", mixconstr(conmu = "MFX", 
                 fixmu = c(FALSE, FALSE, FALSE, FALSE, TRUE), consigma = "CCV"), emstep = 3)
-anova(fitpike1)
-fitpike2 <- mix(pike65, pikepar, "lnorm", mixconstr(consigma = "CCV"), emsteps = 3)
-anova(fitpike2)
-anova(fitpike1, fitpike2)
-anova(fitpike2, fitpike1)
+anova(fitpike3)
+fitpike4 <- mix(pike65, pikepar, "lnorm", mixconstr(consigma = "CCV"), emsteps = 3)
+anova(fitpike4)
+anova(fitpike3, fitpike4)
+anova(fitpike4, fitpike3)
 }
 \keyword{models}
